@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>writingsystem</title>
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+            }
+          }
+        }
+      </script>
+    <link rel="stylesheet" href="https://use.typekit.net/nlp7lum.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .flex-container {
+            display: flex;
+            flex-direction: row;
+            padding-left: 100px;
+            padding-right: 100px;
+        }
+
+        .flex-container > div {
+            color: antiquewhite;
+            font-family: "neue-haas-grotesk-display", sans-serif;
+            font-size: 40px;
+            gap: 40px;
+        }
+
+        .flex-parent1 {
+            display: flex;
+            flex-direction: row;
+            /* gap: 1px; */
+            padding: 0px;
+            background-color: rgb(50, 50, 50);
+            width: 100vw;
+            min-height: 20vh;
+            padding-left: 100px;
+            padding-right: 100px;
+
+            /* border-right: solid 2px;
+            border-bottom: solid 2px; */
+
+        }
+
+        .flex-child1 {
+            flex-grow: 1;
+            background-color: rgb(50, 50, 50);
+            border-radius: 0;
+            border-left: solid 1px;
+            border-top: solid 2px;
+            border-right: solid 1px;
+            border-bottom: solid 1px;
+            transition: flex-grow .5s;
+            flex-basis: 0;
+            border-color: antiquewhite;
+            display: flex;
+            flex-direction: column;
+            justify-content:space-between;
+        }
+
+
+        .flex-child p {
+            display: none;
+            padding: 30px;
+        }
+
+        .flex-child1:hover p {
+            display: inline-block;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: rgb(50, 50, 50);
+            overflow-x: hidden;
+            /* Prevent horizontal scrolling */
+        }
+
+        p {
+            font-family: "neue-haas-grotesk-display", sans-serif;
+            color: antiquewhite;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 28px;
+        }
+
+        h1 {
+            font-family: "neue-haas-grotesk-display", sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            color: antiquewhite;
+            padding-left: 100px;
+            padding-right: 100px;
+            padding-top: 100px;
+            padding-bottom: 25px;
+          font-size: 10vw;
+            line-height: 1em;
+        }
+
+        h2 {
+            font-family: "neue-haas-grotesk-display", sans-serif;
+            color: antiquewhite;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 15px;
+            letter-spacing: 0.5px;
+            padding-left: 50px;
+            padding-right: 50px;
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+            padding-left: 50px;
+            padding-right: 50px;
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+        .image-transition{
+        animation: fadeInUp 0.5s ease-out forwards;
+        opacity:0;
+        }
+
+@keyframes fadeInUp{
+    from{
+        opacity:0;
+    transform: translateY(20px);
+}
+to {
+    opacity: 1;
+    transform: translateY(0);
+}
+}
+
+       
+
+        #b-container {
+            position: relative;
+        }
+
+        #b-photo {
+            position: relative;
+            top: 0;
+            left: 0;
+        }
+
+        #b-letter {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+        }
+
+        #b-letter:hover {
+            opacity: 1;
+        }
+        
+        /* d containier */
+        #d-container {
+            position: relative;
+        }
+
+        #d-photo {
+            position: relative;
+            top: 0;
+            left: 0;
+        }
+
+        #d-letter {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+        }
+
+        #d-letter:hover {
+            opacity: 1;
+        }
+
+        /* g containier */
+        #g-container {
+            position: relative;
+        }
+
+        #g-photo {
+            position: relative;
+            top: 0;
+            left: 0;
+        }
+
+        #g-letter {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+        }
+
+        #g-letter:hover {
+            opacity: 1;
+        }
+
+        
+
+        /* v containier */
+        #v-container {
+            position: relative;
+        }
+
+        #v-photo {
+            position: relative;
+            top: 0;
+            left: 0;
+        }
+
+        #v-letter {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+        }
+
+        #v-letter:hover {
+            opacity: 1;
+        }
+
+        /* t containier */
+        #t-container {
+            position: relative;
+        }
+
+        #t-photo {
+            position: relative;
+            top: 0;
+            left: 0;
+        }
+
+        #t-letter {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+        }
+
+        #t-letter:hover {
+            opacity: 1;
+        }
+
+        /* h containier */
+        #h-container {
+            position: relative;
+        }
+
+        #h-photo {
+            position: relative;
+            top: 0;
+            left: 0;
+        }
+
+        #h-letter {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+        }
+
+        #h-letter:hover {
+            opacity: 1;
+        }
+
+        /* j containier */
+        #j-container {
+            position: relative;
+        }
+
+        #j-photo {
+            position: relative;
+            top: 0;
+            left: 0;
+        }
+
+        #j-letter {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+        }
+
+        #j-letter:hover {
+            opacity: 1;
+        }
+
+        /* k containier */
+        #k-container {
+            position: relative;
+        }
+
+        #k-photo {
+            position: relative;
+            top: 0;
+            left: 0;
+        }
+
+        #k-letter {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+        }
+
+        #k-letter:hover {
+            opacity: 1;
+        }
+
+        /* j containier */
+        #l-container {
+            position: relative;
+        }
+
+        #l-photo {
+            position: relative;
+            top: 0;
+            left: 0;
+        }
+
+        #l-letter {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+        }
+
+        #l-letter:hover {
+            opacity: 1;
+        }
+
+        /* m containier */
+        #m-container {
+            position: relative;
+        }
+
+        #m-photo {
+            position: relative;
+            top: 0;
+            left: 0;
+        }
+
+        #m-letter {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+        }
+
+        #m-letter:hover {
+            opacity: 1;
+        }
+
+        /* n containier */
+        #n-container {
+            position: relative;
+        }
+
+        #n-photo {
+            position: relative;
+            top: 0;
+            left: 0;
+        }
+
+        #n-letter {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+        }
+
+        #n-letter:hover {
+            opacity: 1;
+        }
+
+        /* s containier */
+        #s-container {
+            position: relative;
+        }
+
+        #s-photo {
+            position: relative;
+            top: 0;
+            left: 0;
+        }
+
+        #s-letter {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+        }
+
+        #s-letter:hover {
+            opacity: 1;
+        }
+
+        /* r containier */
+        #r-container {
+            position: relative;
+        }
+
+        #r-photo {
+            position: relative;
+            top: 0;
+            left: 0;
+        }
+
+        #r-letter {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+        }
+
+        #r-letter:hover {
+            opacity: 1;
+        }
+
+        /* c containier */
+        #c-container {
+            position: relative;
+        }
+
+        #c-photo {
+            position: relative;
+            top: 0;
+            left: 0;
+        }
+
+        #c-letter {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+        }
+
+        #c-letter:hover {
+            opacity: 1;
+        }
+
+        /* p containier */
+        #p-container {
+            position: relative;
+        }
+
+        #p-photo {
+            position: relative;
+            top: 0;
+            left: 0;
+        }
+
+        #p-letter {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+        }
+
+        #p-letter:hover {
+            opacity: 1;
+        }
+
+        /* q containier */
+        #q-container {
+            position: relative;
+        }
+
+        #q-photo {
+            position: relative;
+            top: 0;
+            left: 0;
+        }
+
+        #q-letter {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+        }
+
+        #q-letter:hover {
+            opacity: 1;
+        }
+
+        /* w containier */
+        #w-container {
+            position: relative;
+        }
+
+        #w-photo {
+            position: relative;
+            top: 0;
+            left: 0;
+        }
+
+        #w-letter {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+        }
+
+        #w-letter:hover {
+            opacity: 1;
+        }
+
+    
+
+        @media (max-width: 800px) {
+            .flex-parent1 {
+            flex-direction: column;
+        }
+        }
+
+        @media (max-width: 800px) {
+            .flex-container {
+            flex-direction: column;
+        }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div >
+        <img class="image-transition" src="isikolamandebele3.png" >
+    </div>
+
+    <h1>ISIKO SCRIPT</h1>
+   
+
+    <div class="flex-container">
+        <div><p><strong>ISIKO script</strong> represents an effort to design a writing system inspired by the daily life of the Northern Ndebele people. The process involves collecting and extracting forms from various objects as a way to celebrate and preserve their culture.<br> <br>The Northern Ndebele language differs from that of the Southern Ndebele people of KwaNdebele, South Africa, though it is closely related to isiZulu, spoken in South Africa. <br><br>The Northern Ndebele of Zimbabwe trace their origins to the followers of Shaka Zulu's military commander, Mzilikazi Khumalo. Mzilikazi left KwaZulu (a province in present-day South Africa), traveled through the Transvaal (now Johannesburg) and modern-day Botswana, before settling in kwaBulawayo, present-day Zimbabwe, in 1840.<br><br>This work envisions a world where Zimbabwe no longer relies on the Latin alphabet, addressing the dynamics of power in communication while celebrating culture, language, and identity. <br><br></p></div>
+        <div><p>I was not raised in Matabeleland, the region where Northern Ndebele is predominantly spoken in Zimbabwe. Instead, I grew up and attended school in Harare, located in Mashonaland, where Shona languages are spoken. When my family relocated from Bulawayo (Matabeleland) to Harare (Mashonaland), I had to adapt and learn this new linguistic environment. As a result, I primarily learnt English and chiKaranga (a Shona language) and only spoke Northern Ndebele within the confines of my home.<br><br>Reflecting on my educational journey, I realize that all my formal learning has been conducted in English. Through ISIKO script, I am not only reimagining a writing system but also reclaiming my identity as a person of Northern Ndebele heritage.<br><br>This project is both deeply personal and a broader statement on cultural preservation and self-determination.</p></div> 
+    </div>
+
+   
+
+
+    <div class="flex-parent1">
+        <div class="flex-child1">
+            <div id="b-container">
+                <img src="inside2.jpg" id="b-photo">
+                <img src="b.svg" id="b-letter">
+            </div>
+            <h2>Latin Equivalent  [ <strong>B</strong> ]<br><br><strong>KUSEMSAMO</strong>, this is the name given to this fixed shelf created as part of the wall in a Ndebele mud house. This shelf is meant for plates, cups, and smaller pots.
+            </h2>
+        </div>
+
+        <div class="flex-child1">
+            <div id="c-container">
+                <img src="mat2.png" id="c-photo">
+                <img src="c.svg" id="c-letter">
+            </div>
+            <h2>Latin Equivalent  [ <strong>C</strong> ]<br><br><strong>ICANSI</strong>  is mat made of dried tall grass waived together. Women usually use this mat for all sorts of purposes when seated down.
+            </h2>
+        </div>
+
+        <div class="flex-child1">
+            <div id="b-container">
+                <img src="kneeing-down.jpg" id="d-photo">
+                <img src="d.svg" id="d-letter">
+            </div>
+            <h2>Latin Equivalent  [ <strong>D</strong> ]<br><br><strong>UKUGUQA NGAMADOLO</strong> (kneeing down) is a form of showing respect to your elders by children, or by Northern Ndebele women to their husbands. 
+            </h2>
+        </div>
+
+    </div>
+
+    <div class="flex-parent1">
+        
+        <div class="flex-child1">
+            <div id="h-container">
+                <img src="house2.png" id="h-photo">
+                <img src="h.svg" id="h-letter">
+             </div>
+            <h2>Latin Equivalent  [ <strong>H</strong> ]<br><br>The mud huts, typically found in rural areas of Zimbabwe, is usually a round structure with a thatched
+                roof. It symbolizes the past, the countryside, and the preservation of tradition.</h2>
+        </div>
+
+        <div class="flex-child1">
+            <div id="j-container">
+                <img src="jelele2.jpg" id="j-photo">
+                <img src="j.svg" id="j-letter">
+            </div>
+            <h2>Latin Equivalent  [ <strong>J</strong> ]<br><br>The Njelele Shrine is a cave which is of significant spiritual importance in Zimbabwe; pilgrims used to visit it annually for ritual purposes prior to the beginning of the rain season.</h2>
+        </div>
+
+       
+    </div>
+
+    <div class="flex-parent1">
+
+        <div class="flex-child1">
+            
+            <div id="k-container">
+                <img src="pottery2.jpg" id="k-photo">
+                <img src="k.svg" id="k-letter">
+            </div>
+            <h2>Latin Equivalent  [ <strong>k</strong> ]<br><br><strong>UKHAMBA</strong>, is traditional clay pot used for brewing, drinking, and serving beer. Clay pots are essential in rural households, with their size and design determining their specific uses.</h2>
+        </div>
+
+        <div class="flex-child1">
+            <div id="l-container">
+                <img src="hat2.jpg" id="l-photo">
+                <img src="l.svg" id="l-letter">
+            </div>
+            <h2>Latin Equivalent  [ <strong>L</strong> ]<br><br><strong>ISICHOLO</strong> (married woman's hat), is a hat that was developed out of a 19th-century conical hairstyle that was worn as a sign of respect to one's husband and his family.</h2>
+        </div>
+       
+        <div class="flex-child1">
+            <div id="m-container">
+                <img src="amambatha2.jpg" id="m-photo">
+                <img src="m.svg" id="m-letter">
+            </div>
+            <h2>Latin Equivalent  [ <strong>M</strong> ]<br><br><strong>AMAMBATHA</strong> leopard fur capes are capes worn by Zulu and Northern Ndebele man. Nowadays
+                its either cow cape or synthetic leopard fur to preserve the declining numbers of the leopards.</h2>
+        </div>
+
+        
+        
+    </div>
+
+    <div class="flex-parent1">
+
+        <div class="flex-child1">
+            <div id="n-container">
+                <img src="knob-kerie2.jpg" id="n-photo">
+                <img src="n.svg" id="n-letter">
+            </div>
+            <h2>Latin Equivalent  [ <strong>N</strong> ]<br><br><strong>INDUKU</strong> (knobkerrie) is a form of wooden club, used mainly in Southern Africa and Eastern Africa. Typically they have a large knob at one end and can be used for clubbing an enemy's head.</h2>
+        </div>
+
+        <div class="flex-child1">
+            <div id="p-container">
+                <img src="ucengo2.jpg" id="p-photo">
+                <img src="p.svg" id="p-letter">
+            </div>
+            <h2>Latin Equivalent  [ <strong>P</strong> ]<br><br><strong>UCENGO</strong> (calabash) is a natural drinking or pouring cup, handcrafted from the hard shell of the calabash fruit, which comes from the gourd plant.</h2>
+        </div>
+        
+
+
+    </div>
+
+    <div class="flex-parent1">
+
+        <div class="flex-child1">
+            <div id="q-container">
+                <img src="Headband2.jpg" id="q-photo">
+                <img src="q.svg" id="q-letter">
+            </div>
+            <h2>Latin Equivalent  [ <strong>Q</strong> ]<br><br><strong>UMQHELE</strong>, is a traditional circular headband made of fur  worn by Zulu or Northern Ndebele men.</h2>
+        </div>
+        
+
+        <div class="flex-child1"> 
+            <div id="r-container">
+            <img src="stool2.png" id="r-photo">
+            <img src="r.svg" id="r-letter">
+        </div>
+            <h2>Latin Equivalent  [ <strong>R</strong> ]<br><br>These stools go beyond mere seating arrangements. They serve as symbols of power, authority, and social status within the community.</h2>
+        </div>
+        
+
+        <div class="flex-child1">
+            <div id="s-container">
+                <img src="kraal2.jpg" id="s-photo">
+                <img src="s.svg" id="s-letter">
+            </div>
+            <h2>Latin Equivalent  [ <strong>S</strong> ]<br><br><strong>ISIBAYA</strong> (kraal), cattle is a symbolic and material importance, there is an expression “umnumzane ubonakala ngesibaya sakhe” (the man's social status is seen by the size of his kraal).</h2>
+        </div>
+
+        <div class="flex-child1">
+            <div id="t-container">
+                <img src="divination2.jpg" id="t-photo">
+                <img src="t.svg" id="t-letter">
+            </div>
+            <h2>Latin Equivalent  [ <strong>T</strong> ]<br><br><strong>AMATHAMBO</strong> (divination bones) are used by traditional healers to assist communities socially and politically, healing physical, emotional, and spiritual illnesses, counteracting witchcraft and narrating the history.</h2>
+        </div>
+
+       
+        
+        
+    </div>
+
+
+
+    <div class="flex-parent1">
+
+        <div class="flex-child1">
+            <div id="v-container">
+                <img src="tree3.jpg" id="v-photo">
+                <img src="v.svg" id="v-letter">
+            </div>
+            <h2>Latin Equivalent  [ <strong>V</strong> ]<br><br><strong>ISIHAQA</strong> is a traditional natural medicine made of roots & barks (from Cassia abbreviata or long-tail cassia tree) mixed with water. The long-tail cassia tree is native to Africa.</h2>
+        </div>
+
+        <div class="flex-child1">
+            <div id="w-container">
+                <img src="spear2.jpg" id="w-photo">
+                <img src="w.svg" id="w-letter">
+            </div>
+            <h2>Latin Equivalent  [ <strong>W</strong> ]<br><br><strong>IKLWA</strong> (assegai) is a short short spear, believed to be onomatopoeic, representing the sound made when the spear is pulled out of a victim.</h2>
+        </div>
+
+
+    </div>
+        
+
+    </div>
+
+    <div>
+        <img src="vowels-01.svg">
+    </div>
+
+    <div>
+        <img src="hello-01.svg">
+    </div>
+
+    <div>
+        <img src="mother.svg">
+    </div>
+
+    <div>
+        <img src="Roadsign.jpg">
+    </div>
+
+    <div><h2>Designed by <strong>OSMOND TSHUMA</strong>. Rhode Island Schoold of Design (RISD).</h2></div>
+
+
+
+
+</body>
+
+</html>

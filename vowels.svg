@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1164.3 426.8">
+  <!-- Generator: Adobe Illustrator 29.1.0, SVG Export Plug-In . SVG Version: 2.1.0 Build 142)  -->
+  <defs>
+    <style>
+      .st0, .st1 {
+        fill: none;
+        stroke: #fff;
+        stroke-miterlimit: 10;
+      }
+
+      .st1 {
+        stroke-dasharray: 1.2 2.3;
+        stroke-width: 1.2px;
+      }
+
+      .st2, .st3, .st4, .st5, .st6 {
+        fill: #f8e9d5;
+      }
+
+      .st7 {
+        fill: #fff;
+      }
+
+      .st3 {
+        font-family: MyriadPro-Regular, 'Myriad Pro';
+      }
+
+      .st3, .st5 {
+        font-size: 11px;
+      }
+
+      .st4 {
+        font-family: NHaasGroteskDSPro-56It, 'Neue Haas Grotesk Display Pro';
+        font-size: 9px;
+        font-style: italic;
+      }
+
+      .st5, .st6 {
+        font-family: NHaasGroteskDSPro-55Rg, 'Neue Haas Grotesk Display Pro';
+      }
+
+      .st6 {
+        font-size: 17.4px;
+      }
+    </style>
+  </defs>
+  <line class="st1" x1="27.1" y1="217.7" x2="1132" y2="217.7"/>
+  <line class="st1" x1="27.1" y1="107.9" x2="1132" y2="107.9"/>
+  <line class="st1" x1="27.1" y1="282.6" x2="1132" y2="282.6"/>
+  <line class="st1" x1="27.1" y1="64.4" x2="1132" y2="64.4"/>
+  <text class="st3" transform="translate(148.3 326.6)"><tspan x="0" y="0">a</tspan></text>
+  <text class="st4" transform="translate(147.2 356)"><tspan x="0" y="0">The “a” feels and sounds </tspan><tspan x="0" y="10.8">sharp and short when </tspan><tspan x="0" y="21.6">spoken, like “a” in “father”.</tspan></text>
+  <text class="st4" transform="translate(338.5 356)"><tspan x="0" y="0">The “e” feels like a </tspan><tspan x="0" y="10.8">descending echo when </tspan><tspan x="0" y="21.6">spoken, like “e” in “kettle”.</tspan></text>
+  <text class="st4" transform="translate(522.2 356)"><tspan x="0" y="0">The “i” feels like an </tspan><tspan x="0" y="10.8">ascending tone when </tspan><tspan x="0" y="21.6">spoken, like “ee” in “see”.</tspan></text>
+  <text class="st4" transform="translate(723 356)"><tspan x="0" y="0">The “o” feels hallow when </tspan><tspan x="0" y="10.8">spoken, like “o” in “more”.</tspan></text>
+  <text class="st4" transform="translate(958.7 356)"><tspan x="0" y="0">The “u” feels like a long </tspan><tspan x="0" y="10.8">stretch when spoken, like </tspan><tspan x="0" y="21.6">“oo” in “moon”.</tspan></text>
+  <text class="st3" transform="translate(338.5 326.6)"><tspan x="0" y="0">e</tspan></text>
+  <text class="st3" transform="translate(522.2 326.6)"><tspan x="0" y="0">i</tspan></text>
+  <text class="st3" transform="translate(723 326.6)"><tspan x="0" y="0">o</tspan></text>
+  <text class="st3" transform="translate(958.7 326.6)"><tspan x="0" y="0">u</tspan></text>
+  <text class="st5" transform="translate(1056.6 123.3)"><tspan x="0" y="0">Script height</tspan></text>
+  <text class="st5" transform="translate(1062.1 78.3)"><tspan x="0" y="0">Ascenders</tspan></text>
+  <text class="st6" transform="translate(27.1 35)"><tspan x="0" y="0">VOWELS</tspan></text>
+  <text class="st5" transform="translate(1055.8 277.9)"><tspan x="0" y="0">Descenders</tspan></text>
+  <path class="st2" d="M724.9,237.9c-18.8,0-34.2-15.3-34.2-34.2s15.3-34.2,34.2-34.2,34.2,15.3,34.2,34.2-15.3,34.2-34.2,34.2ZM724.9,184.1c-10.8,0-19.6,8.8-19.6,19.6s8.8,19.6,19.6,19.6,19.6-8.8,19.6-19.6-8.8-19.6-19.6-19.6Z"/>
+  <rect class="st2" x="334.3" y="189.7" width="14.6" height="92.9"/>
+  <rect class="st2" x="515.7" y="64.4" width="14.6" height="92.9"/>
+  <rect class="st2" x="915.9" y="203.1" width="92.9" height="14.6"/>
+  <circle class="st2" cx="152.1" cy="203.7" r="14"/>
+  <g>
+    <line class="st0" x1="1120.3" y1="108.8" x2="1120.3" y2="215.9"/>
+    <polygon class="st7" points="1116.2 112.1 1117 112.8 1120.3 109.2 1123.7 112.8 1124.4 112.1 1120.3 107.7 1116.2 112.1"/>
+    <polygon class="st7" points="1116.2 212.6 1117 211.9 1120.3 215.5 1123.7 211.9 1124.4 212.6 1120.3 217 1116.2 212.6"/>
+  </g>
+</svg>
