@@ -604,6 +604,46 @@ to {
         }
         }
 
+        /* Custom Player Styling */
+        #audio-player {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding-left: 100px;
+            padding-right: 100px;
+            border-radius: 8px;
+        }
+        
+        #audio-player button {
+            background-color:#F8E9D5; /* Button color */
+            border: none;
+            color: rgb(50, 50, 50);
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 7px;
+        }
+        
+        #audio-player button:hover {
+            background-color: #E22A45; /* Hover color */
+        }
+        
+        #progress-bar {
+            flex-grow: 1;
+            height: 4px;
+            background: antiquewhite;
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+        }
+    
+        #progress-bar div {
+            height: 100%;
+            background: #E22A45;
+            width: 0%;
+            transition: width 0.1s;
+        }
+
 
     </style>
 </head>
@@ -765,6 +805,7 @@ to {
                 <img src="t.svg" id="t-letter">
             </div>
             <h2>Latin Equivalent  [ <strong>T</strong> ]<br><br><strong>AMATHAMBO</strong> (divination bones) are used by traditional healers to assist communities socially, politically and healing.</h2>
+
         </div>
 
        
@@ -804,11 +845,55 @@ to {
 
     <div>
         <img src="hello-01.svg">
+       
+        <div id="audio-player">
+            <button id="play-pause">Play</button>
+            <div id="progress-bar"><div></div></div>
+            <button id="stop">Stop</button>
+        </div>
+          
+        <audio id="audio-element" src="Hello.mp3"></audio>
+          
+        <script>
+            const audio = document.getElementById('audio-element');
+            const playPauseBtn = document.getElementById('play-pause');
+            const stopBtn = document.getElementById('stop');
+            const progressBar = document.getElementById('progress-bar').querySelector('div');
+          
+            // Toggle Play/Pause
+            playPauseBtn.addEventListener('click', () => {
+              if (audio.paused) {
+                audio.play();
+                playPauseBtn.textContent = 'Pause';
+              } else {
+                audio.pause();
+                playPauseBtn.textContent = 'Play';
+              }
+            });
+          
+            // Stop Playback
+            stopBtn.addEventListener('click', () => {
+              audio.pause();
+              audio.currentTime = 0;
+              playPauseBtn.textContent = 'Play';
+            });
+          
+            // Update Progress Bar
+            audio.addEventListener('timeupdate', () => {
+              const progress = (audio.currentTime / audio.duration) * 100;
+              progressBar.style.width = `${progress}%`;
+            });
+        </script>
+
+
     </div>
+
 
     <div>
         <img src="mother.svg">
     </div>
+
+    
 
     <div>
         <img src="Roadsign.jpg">
